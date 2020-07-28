@@ -12,7 +12,7 @@ use ArrayIterator;
 use eZ\Publish\API\Repository\Values\Content\Search\Facet;
 use IteratorAggregate;
 
-class TermFacet extends Facet implements IteratorAggregate
+abstract class TermFacet extends Facet implements IteratorAggregate
 {
     /**
      * An array with term as key and count of matching content objects as value.
