@@ -12,9 +12,6 @@ use ArrayIterator;
 use eZ\Publish\API\Repository\Values\Content\Search\Facet;
 use IteratorAggregate;
 
-/**
- * this class hold counts for content in sections.
- */
 class TermFacet extends Facet implements IteratorAggregate
 {
     /**
