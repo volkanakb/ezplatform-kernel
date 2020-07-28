@@ -8,17 +8,17 @@ declare(strict_types=1);
 
 namespace eZ\Publish\API\Repository\Values\Content\Search\Facet;
 
-use eZ\Publish\API\Repository\Values\Content\Search\Facet;
+use Iterator;
 
 /**
- * this class hold counts for content in sections.
+ * Holds counts for content/locations in sections.
  */
-class SectionFacet extends Facet
+final class SectionFacet extends TermFacet
 {
     /**
      * An array with sectionId as key and count of matching content objects as value.
      *
-     * @var array
+     * @var int[]
      */
-    public $entries;
+    public $entries = [];
 }

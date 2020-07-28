@@ -8,17 +8,15 @@ declare(strict_types=1);
 
 namespace eZ\Publish\API\Repository\Values\Content\Search\Facet;
 
-use eZ\Publish\API\Repository\Values\Content\Search\Facet;
-
 /**
- * This class holds counts of content with content type.
+ * Holds counts of content/location with content type.
  */
-class ContentTypeFacet extends Facet
+class ContentTypeFacet extends TermFacet
 {
     /**
      * An array with contentTypeId as key and count of matching content objects as value.
      *
-     * @var array
+     * @var int[]
      */
-    public $entries;
+    public $entries = [];
 }

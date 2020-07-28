@@ -8,17 +8,24 @@ declare(strict_types=1);
 
 namespace eZ\Publish\API\Repository\Values\Content\Search\Facet;
 
+use ArrayIterator;
 use eZ\Publish\API\Repository\Values\Content\Search\Facet;
+use IteratorAggregate;
 
 /**
  * this class hold counts for content in sections.
  */
-class TermFacet extends Facet
+class TermFacet extends Facet implements IteratorAggregate
 {
     /**
      * An array with term as key and count of matching content objects as value.
      *
      * @var array
      */
-    public $entries;
+    public $entries = [];
+
+    public function getIterator()
+    {
+        return new ArrayIterator($this->entries);
+    }
 }
