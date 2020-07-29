@@ -17,7 +17,7 @@ abstract class TermFacet extends Facet implements IteratorAggregate
     /**
      * An array with term as key and count of matching content objects as value.
      *
-     * @var array
+     * @var \eZ\Publish\API\Repository\Values\Content\Search\Facet\TermFacetEntry[]
      */
     public $entries = [];
 

@@ -6,15 +6,13 @@
  */
 namespace eZ\Publish\API\Repository\Values\Content\Query\FacetBuilder;
 
-use eZ\Publish\API\Repository\Values\Content\Query\FacetBuilder;
-
 /**
  * Build a date range facet.
  *
  * If provided the search service returns a DateRangeFacet depending on the provided
  * type (PUBLISHED, CREATED, MODIFIED)
  */
-abstract class DateRangeFacetBuilder extends FacetBuilder
+abstract class DateRangeFacetBuilder extends RangeFacetBuilder
 {
     public const PUBLISHED = 0;
     public const CREATED = 1;

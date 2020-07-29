@@ -6,11 +6,8 @@
  */
 declare(strict_types=1);
 
-namespace eZ\Publish\API\Repository\Values\Content\Query\FacetBuilder;
+namespace eZ\Publish\Core\Repository\Mapper;
 
-/**
- * Marker interface for location facets.
- */
-interface LocationFacetBuilder
+final class FacetDomainMapperRegistry
 {
 }

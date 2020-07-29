@@ -6,6 +6,8 @@
  */
 namespace eZ\Publish\Core\FieldType\Country;
 
+use eZ\Publish\SPI\FieldType\Aggregatable;
+use eZ\Publish\SPI\FieldType\FacetSpecification;
 use eZ\Publish\SPI\Persistence\Content\Field;
 use eZ\Publish\SPI\Persistence\Content\Type\FieldDefinition;
 use eZ\Publish\SPI\FieldType\Indexable;
@@ -14,8 +16,13 @@ use eZ\Publish\SPI\Search;
 /**
  * Indexable definition for Country field type.
  */
-class SearchField implements Indexable
+class SearchField implements Indexable, Aggregatable
 {
+    public const IDC_FACET = 'ids';
+    public const NAME_FACET = 'name';
+    public const ALPHA2_FACET = 'alpha2';
+    public const ALPHA3_FACET = 'alpha3';
+
     /** @var array */
     protected $countriesInfo;
 
@@ -131,5 +138,25 @@ class SearchField implements Indexable
     public function getDefaultSortField()
     {
         return 'sort_value';
+    }
+
+    /**
+     * Get name of the default field to be used for facet search.
+     *
+     * @return string
+     */
+    public function getDefaultFacet(): string
+    {
+        return self::IDC_FACET;
+    }
+
+    public function getFacetsSpecifications(): array
+    {
+        return [
+            self::IDC_FACET => new FacetSpecification('idc', FacetSpecification::TYPE_TERM),
+            self::NAME_FACET => new FacetSpecification('name', FacetSpecification::TYPE_TERM),
+            self::ALPHA2_FACET => new FacetSpecification('alpha', FacetSpecification::TYPE_TERM),
+            self::ALPHA3_FACET => new FacetSpecification('alpha', FacetSpecification::TYPE_TERM),
+        ];
     }
 }

@@ -8,14 +8,12 @@ declare(strict_types=1);
 
 namespace eZ\Publish\API\Repository\Values\Content\Query\FacetBuilder;
 
-use eZ\Publish\API\Repository\Values\Content\Query\FacetBuilder;
-
 /**
  * Build a section facet.
  *
  * If provided the search service returns a SectionFacet. Which contains the counts for
  * content in the existing sections.
  */
-class SectionFacetBuilder extends FacetBuilder
+class SectionFacetBuilder extends TermFacetBuilder
 {
 }

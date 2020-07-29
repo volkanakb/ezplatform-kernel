@@ -8,8 +8,6 @@ declare(strict_types=1);
 
 namespace eZ\Publish\API\Repository\Values\Content\Search\Facet;
 
-use Iterator;
-
 /**
  * Holds counts for content/locations in sections.
  */

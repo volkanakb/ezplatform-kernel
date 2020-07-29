@@ -8,14 +8,6 @@ declare(strict_types=1);
 
 namespace eZ\Publish\API\Repository\Values\Content\Query\FacetBuilder;
 
-use eZ\Publish\API\Repository\Values\Content\Query\FacetBuilder;
-
-/**
- * Build a criterion facet.
- *
- * If provided the search service returns a CriterionFacet based on the criterion provided
- * in the FacetBuilder class.
- */
-class CriterionFacetBuilder extends FacetBuilder
+class VisibilityFacetBuilder extends TermFacetBuilder
 {
 }

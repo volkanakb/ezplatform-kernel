@@ -50,4 +50,17 @@ class FieldFacetBuilder extends FacetBuilder
      * @var int
      */
     public $sort;
+
+    public static function create(string $fieldIdentifier, ?string $facetIdentifier): self
+    {
+        $fieldPath = $fieldIdentifier;
+        if ($facetIdentifier !== null) {
+            $fieldPath .= '/' . $facetIdentifier;
+        }
+
+        $facet = new self();
+        $facet->fieldPaths[] = $fieldPath;
+
+        return $facet;
+    }
 }

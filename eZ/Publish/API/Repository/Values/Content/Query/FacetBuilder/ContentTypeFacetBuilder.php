@@ -8,13 +8,11 @@ declare(strict_types=1);
 
 namespace eZ\Publish\API\Repository\Values\Content\Query\FacetBuilder;
 
-use eZ\Publish\API\Repository\Values\Content\Query\FacetBuilder;
-
 /**
  * Building a content type facet.
  *
  * If provided the search service returns a ContentTypeFacet
  */
-class ContentTypeFacetBuilder extends FacetBuilder
+class ContentTypeFacetBuilder extends TermFacetBuilder
 {
 }

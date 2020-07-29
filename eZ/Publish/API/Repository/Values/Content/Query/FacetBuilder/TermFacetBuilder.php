@@ -16,6 +16,6 @@ use eZ\Publish\API\Repository\Values\Content\Query\FacetBuilder;
  * If provided the search service returns a TermFacet which contains the counts for
  * content containing terms in arbitrary fields
  */
-class TermFacetBuilder extends FacetBuilder
+abstract class TermFacetBuilder extends FacetBuilder
 {
 }

@@ -311,6 +311,13 @@ class SearchService implements SearchServiceInterface
         return $result;
     }
 
+    protected function buildFacetDomainOnSearchResult(SearchResult $result, array $languageFilter): void
+    {
+        foreach ($result->facets as $facet) {
+            $result->facets[$facet->name] = $facet;
+        }
+    }
+
     /**
      * Adds content, read Permission criteria if needed and return false if no access at all.
      *

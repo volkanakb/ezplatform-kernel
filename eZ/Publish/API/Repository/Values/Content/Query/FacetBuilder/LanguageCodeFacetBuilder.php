@@ -8,9 +8,6 @@ declare(strict_types=1);
 
 namespace eZ\Publish\API\Repository\Values\Content\Query\FacetBuilder;
 
-/**
- * Marker interface for location facets.
- */
-interface LocationFacetBuilder
+class LanguageCodeFacetBuilder extends TermFacetBuilder
 {
 }

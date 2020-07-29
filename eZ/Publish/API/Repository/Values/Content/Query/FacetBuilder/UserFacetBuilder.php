@@ -8,14 +8,12 @@ declare(strict_types=1);
 
 namespace eZ\Publish\API\Repository\Values\Content\Query\FacetBuilder;
 
-use eZ\Publish\API\Repository\Values\Content\Query\FacetBuilder;
-
 /**
  * Build a user facet.
  *
  * If provided the search service returns a UserFacet for the given type.
  */
-class UserFacetBuilder extends FacetBuilder
+class UserFacetBuilder extends TermFacetBuilder
 {
     /**
      * Owner user.

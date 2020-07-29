@@ -8,7 +8,8 @@ declare(strict_types=1);
 
 namespace eZ\Publish\API\Repository\Values\Content\Query\FacetBuilder\Location;
 
-use eZ\Publish\API\Repository\Values\Content\Query\FacetBuilder\Location;
+use eZ\Publish\API\Repository\Values\Content\Query\FacetBuilder\LocationFacetBuilder;
+use eZ\Publish\API\Repository\Values\Content\Query\FacetBuilder\TermFacetBuilder;
 
 /**
  * Build a Subtree facet.
@@ -18,7 +19,7 @@ use eZ\Publish\API\Repository\Values\Content\Query\FacetBuilder\Location;
  *
  * @todo: check hierarchical facets
  */
-class LocationFacetBuilder extends Location
+class SubtreeFacetBuilder extends TermFacetBuilder implements LocationFacetBuilder
 {
     /**
      * The parent location.

@@ -4,8 +4,12 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
+
 namespace eZ\Publish\Core\FieldType\Integer;
 
+use eZ\Publish\API\Repository\Tests\Common\FacetedSearchProvider;
+use eZ\Publish\SPI\FieldType\Aggregatable;
+use eZ\Publish\SPI\FieldType\FacetSpecification;
 use eZ\Publish\SPI\Persistence\Content\Field;
 use eZ\Publish\SPI\Persistence\Content\Type\FieldDefinition;
 use eZ\Publish\SPI\FieldType\Indexable;
@@ -14,8 +18,10 @@ use eZ\Publish\SPI\Search;
 /**
  * Indexable definition for Integer field type.
  */
-class SearchField implements Indexable
+class SearchField implements Indexable, Aggregatable
 {
+    public const VALUE_FACET = 'value';
+
     /**
      * Get index data for field for search backend.
      *
@@ -78,5 +84,20 @@ class SearchField implements Indexable
     public function getDefaultSortField()
     {
         return $this->getDefaultMatchField();
+    }
+
+    public function getDefaultFacet(): string
+    {
+        return 'value';
+    }
+
+    public function getFacetsSpecifications(): array
+    {
+        return [
+            self::VALUE_FACET => new FacetSpecification(
+                'value',
+                FacetSpecification::TYPE_TERM | FacetSpecification::TYPE_RANGE
+            ),
+        ];
     }
 }
